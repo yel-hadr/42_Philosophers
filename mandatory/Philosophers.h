@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/06 02:24:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/06 04:46:44 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ void			*ft_calloc(size_t count, size_t size);
 void			check_arg(int ac , char **av, t_philosophrs *gen);
 t_philosophrs	ft_init_the_fork(t_philosophrs philosophrs);
 t_philosophrs	ft_init_the_thread(t_philosophrs philosophrs);
-void	*ft_philosophers(void *arg);
+void			*ft_philosophers(void *arg);
+void			ft_sleeping(int id, t_the_philo *philo);
+void			ft_eat(int id, t_the_philo *philo);
+void			ft_thinking(int id);
+void			ft_teken_the_fork(int id, pthread_mutex_t *mutex);
 
 #endif
