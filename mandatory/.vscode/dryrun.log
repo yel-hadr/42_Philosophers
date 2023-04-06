@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yel-hadr/Desktop/42_Philosophers/mandatory'
 cc -Wall -Wextra -Werror -fsanitize=address -g   -c -o Philosophers.o Philosophers.c
  
@@ -6,6 +6,6 @@ cc -Wall -Wextra -Werror -fsanitize=address -g   -c -o check_arg.o check_arg.c
 cc -Wall -Wextra -Werror -fsanitize=address -g   -c -o philo_init.o philo_init.c
 cc -Wall -Wextra -Werror -fsanitize=address -g   -c -o event.o event.c
 cc -Wall -Wextra -Werror -fsanitize=address -g   -c -o utile_philo.o utile_philo.c
-cc -Wall -Wextra -Werror -fsanitize=address -g -lpthread -pthread -g3 Philosophers.o check_arg.o philo_init.o event.o utile_philo.o -o philo
+cc -Wall -Wextra -Werror -fsanitize=address -g -lpthread Philosophers.o check_arg.o philo_init.o event.o utile_philo.o -o philo
 make: Leaving directory `/Users/yel-hadr/Desktop/42_Philosophers/mandatory'
  
