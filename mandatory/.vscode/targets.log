@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Apr  6 17:50:15 2023
+# Make data base, printed on Fri Apr  7 04:46:36 2023
 
 # Variables
 
@@ -35,23 +35,21 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -g3
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_CWD = /Users/yel-hadr/Desktop/42_Philosophers/mandatory
+VSCODE_CWD = /
 # environment
-PATH = /Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
+LaunchInstanceID = F7312254-2ADD-414F-A149-C7D30F40C890
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
-# environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.t0ypdJ78ik/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.UuKzkuCPG4/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -71,21 +69,17 @@ LOGNAME = yel-hadr
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-ZSH = /Users/yel-hadr/.oh-my-zsh
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
 # environment
-LC_TERMINAL = iTerm2
-# environment
-SHLVL = 2
+SHLVL = 1
 # makefile (from `Makefile', line 2)
 CC = cc
 # default
@@ -94,20 +88,12 @@ MAKE_VERSION := 3.81
 USER = yel-hadr
 # makefile
 .DEFAULT_GOAL := all
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:9A959B97-E554-4D1D-B9DD-7DAEC3CFF968
 # makefile (from `Makefile', line 1)
 NAME = philo
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -125,31 +111,23 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.13
-# environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.FB0DB5FB-7C5B-4AB4-BC02-3D01AA34C4F7
-# environment
-LC_TERMINAL_VERSION = 3.4.13
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000004.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:9A959B97-E554-4D1D-B9DD-7DAEC3CFF968
-# environment
-COLORFGBG = 15;0
-# environment
 __CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
-ITERM_PROFILE = Default
-# environment
-PAGER = less
-# environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a7
 # automatic
 ^F = $(notdir $^)
 # default
@@ -159,15 +137,11 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # environment
-CLICOLOR = 1
-# environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 45268
+VSCODE_PID = 5748
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=7/106=7%
+# Load=64/1024=6%, Rehash=0, Collisions=4/93=4%
 
 # Pattern-specific Variable Values
 
@@ -175,9 +149,9 @@ VSCODE_PID = 45268
 
 # Directories
 
-# . (device 16777225, inode 4838546): 16 files, no impossibilities.
+# . (device 16777225, inode 4838546): 11 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -189,16 +163,14 @@ all: util philo
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 philo: Philosophers.o check_arg.o philo_init.o event.o utile_philo.o
 #  Implicit rule search has not been done.
-#  Last modified 2023-04-06 06:39:47
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 10):
@@ -207,12 +179,9 @@ philo: Philosophers.o check_arg.o philo_init.o event.o utile_philo.o
 
 # Not a target:
 philo_init.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-04-06 06:39:47
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -223,7 +192,7 @@ philo_init.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-04-06 06:38:27
+#  Last modified 2023-04-06 22:42:20
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -231,12 +200,9 @@ Makefile:
 
 # Not a target:
 utile_philo.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-04-06 06:39:47
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Implicit rule search has not been done.
@@ -255,9 +221,8 @@ fclean: clean
 # Not a target:
 Philosophers.o:
 #  Implicit rule search has been done.
-#  Last modified 2023-04-06 06:39:46
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -276,21 +241,15 @@ clean:
 
 # Not a target:
 check_arg.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-04-06 06:39:47
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 event.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-04-06 06:39:47
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 util:
 #  Implicit rule search has not been done.
@@ -313,6 +272,8 @@ util:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Apr  6 17:50:15 2023
+# Finished Make data base on Fri Apr  7 04:46:36 2023
 
  
+make: *** No rule to make target `Philosophers.o', needed by `philo'.  Stop.
+

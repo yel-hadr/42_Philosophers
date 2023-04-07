@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 02:03:17 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/06 04:43:00 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/07 02:55:59 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ t_philosophrs	ft_init_the_thread(t_philosophrs philosophrs)
 		the_philo = do_the_philo(the_philo, philosophrs, i);
 		pthread_create(&philosophrs.philo[i], NULL, &ft_philosophers, the_philo);
 	}
+	
 	return (philosophrs);
 }

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 04:44:51 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/06 21:52:41 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/07 02:51:41 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,23 @@ long long int	real_time(long long int starting)
 	return (ft_get_time() - starting);
 }
 
+void	ft_sleep(long long int time, long long int starting)
+{
+	long long int sleep = 0;
+	time += real_time(starting);
+	while (sleep < time)
+	{
+		usleep(500);
+		sleep = real_time(starting);
+	}
+}
+
 void	ft_sleeping(int id, t_the_philo *philo)
 {
 	long long int time;
 	time = real_time(philo->starting_time);
 	printf("%lld %d is sleeping\n", time, id);
-	usleep(100 * 1000);
+	ft_sleep(philo->time_to_sleep, philo->starting_time);
 }
 
 void	ft_eat(int id, t_the_philo *philo)
@@ -37,7 +48,7 @@ void	ft_eat(int id, t_the_philo *philo)
 	long long int time;
 	time = real_time(philo->starting_time);
 	printf("%lld %d is eating\n", time ,id);
-	usleep(100 * 1000);
+	ft_sleep(philo->time_to_eat , philo->starting_time);
 	pthread_mutex_unlock(philo->r_fork.mutex);
 	pthread_mutex_unlock(philo->l_fork.mutex);
 }
