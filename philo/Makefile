@@ -1,7 +1,8 @@
 NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
-SRC = Philosophers.c check_arg.c creating_the_fork.c craet_info.c start_the_philo.c utile_philo.c
+SRC = Philosophers.c check_arg.c creating_the_fork.c craet_info.c start_the_philo.c\
+		 utile_routine.c util_time.c
 OBJ = $(SRC:.c=.o)
 
 all		: util $(NAME)

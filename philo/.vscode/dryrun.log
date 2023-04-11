@@ -6,7 +6,8 @@ cc -Wall -Wextra -Werror -g3   -c -o check_arg.o check_arg.c
 cc -Wall -Wextra -Werror -g3   -c -o creating_the_fork.o creating_the_fork.c
 cc -Wall -Wextra -Werror -g3   -c -o craet_info.o craet_info.c
 cc -Wall -Wextra -Werror -g3   -c -o start_the_philo.o start_the_philo.c
-cc -Wall -Wextra -Werror -g3   -c -o utile_philo.o utile_philo.c
-cc -Wall -Wextra -Werror -g3 -lpthread Philosophers.o check_arg.o creating_the_fork.o craet_info.o start_the_philo.o utile_philo.o -o philo
+cc -Wall -Wextra -Werror -g3   -c -o utile_routine.o utile_routine.c
+cc -Wall -Wextra -Werror -g3   -c -o util_time.o util_time.c
+cc -Wall -Wextra -Werror -g3 -lpthread Philosophers.o check_arg.o creating_the_fork.o craet_info.o start_the_philo.o utile_routine.o util_time.o -o philo
 make: Leaving directory `/Users/yel-hadr/Desktop/42_Philosophers/philo'
  
