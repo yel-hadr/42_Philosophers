@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/11 06:06:35 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/12 01:45:10 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_routine(void *arg)
 	if (info->id % 2 == 1)
 	{
 		ft_thinking(info->id, info);
-		usleep(200);
+		usleep(1000);
 	}
 	while (i != info->number_of_to_eat)
 	{
@@ -33,6 +33,8 @@ void	*ft_routine(void *arg)
 		ft_thinking(info->id, info);
 		i++;
 	}
+	if (!*info->die)
+		*info->die = 2;
 	return (NULL);
 }
 
@@ -42,6 +44,15 @@ t_philosophrs	start_thread(t_philosophrs philo)
 	
 	i = philo.number_of_philosophers;
 	while(i--)
-		pthread_create(&philo.philo[i], NULL, &ft_routine, &philo.info[i]);
+	{
+		if(i % 2 == 0)
+			pthread_create(&philo.philo[i], NULL, &ft_routine, &philo.info[i]);
+	}
+	i = philo.number_of_philosophers;
+	while(i--)
+	{
+		if(i % 2 == 1)
+			pthread_create(&philo.philo[i], NULL, &ft_routine, &philo.info[i]);
+	}
 	return (philo);
 }

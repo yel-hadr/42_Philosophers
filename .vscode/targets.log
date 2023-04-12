@@ -7,8 +7,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Fri Apr  7 04:46:36 2023
+
+# Make data base, printed on Wed Apr 12 01:42:16 2023
 
 # Variables
 
@@ -16,10 +18,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# makefile (from `Makefile', line 5)
-OBJ = $(SRC:.c=.o)
-# makefile (from `Makefile', line 4)
-SRC = Philosophers.c check_arg.c philo_init.c event.c utile_philo.c
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -27,33 +25,31 @@ SRC = Philosophers.c check_arg.c philo_init.c event.c utile_philo.c
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/yel-hadr/Desktop/42_Philosophers/mandatory
+CURDIR := /Users/yel-hadr/Desktop/42_Philosophers
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 3)
-CFLAGS = -Wall -Wextra -Werror -g3
-# makefile (from `Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # environment
-LaunchInstanceID = F7312254-2ADD-414F-A149-C7D30F40C890
+LaunchInstanceID = 5F3F7AB9-6BA2-4AD9-A4EE-58213EF54A4B
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.UuKzkuCPG4/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.r4UUBKzaNd/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/yel-hadr/Desktop/42_Philosophers/mandatory
+PWD = /Users/yel-hadr/Desktop/42_Philosophers
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -80,16 +76,12 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 2)
-CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = yel-hadr
 # makefile
-.DEFAULT_GOAL := all
-# makefile (from `Makefile', line 1)
-NAME = philo
+.DEFAULT_GOAL := 
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -111,7 +103,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000004.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -139,9 +131,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 5748
+VSCODE_PID = 3029
 # variable set hash-table stats:
-# Load=64/1024=6%, Rehash=0, Collisions=4/93=4%
+# Load=59/1024=6%, Rehash=0, Collisions=1/80=1%
 
 # Pattern-specific Variable Values
 
@@ -149,9 +141,9 @@ VSCODE_PID = 5748
 
 # Directories
 
-# . (device 16777225, inode 4838546): 11 files, no impossibilities.
+# . (device 16777225, inode 4660661): 7 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -159,29 +151,14 @@ VSCODE_PID = 5748
 
 # Files
 
-all: util philo
+# Not a target:
+all:
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-philo: Philosophers.o check_arg.o philo_init.o event.o utile_philo.o
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 10):
-	$(CC) $(CFLAGS) -lpthread $(OBJ) -o $(NAME)
-	
-
-# Not a target:
-philo_init.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -191,26 +168,23 @@ philo_init.o:
 
 # Not a target:
 Makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2023-04-06 22:42:20
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-utile_philo.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-fclean: clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 19):
-	@rm -rf $(NAME)
-	
+makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
@@ -219,61 +193,28 @@ fclean: clean
 #  File has not been updated.
 
 # Not a target:
-Philosophers.o:
+GNUmakefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-re: fclean all
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 16):
-	@rm -f $(OBJ)
-	
-
-# Not a target:
-check_arg.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-event.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-util:
-#  Implicit rule search has not been done.
-#  Last modified 1969-12-31 23:59:56
-#  File has been updated.
-#  Successfully updated.
-#  commands to execute (from `Makefile', line 13):
-	
-
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+# # of strings in strcache: 0
+# # of strcache buffers: 0
+# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
+# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Apr  7 04:46:36 2023
+# Finished Make data base on Wed Apr 12 01:42:16 2023
 
  
-make: *** No rule to make target `Philosophers.o', needed by `philo'.  Stop.
-

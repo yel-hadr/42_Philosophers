@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 04:44:51 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/11 05:54:36 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:19:27 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ int	ft_who_is_died(long long int time, t_the_philo *info)
 {
 	if (time - info->last_meal > info->time_to_die)
 	{
+		pthread_mutex_lock(info->stop);
 		info->last_meal = time;
 		*info->die = 1;
+		pthread_mutex_unlock(info->stop);
 		return 1; 
 	}
 	return 0;
@@ -27,7 +29,8 @@ void	ft_sleeping(int id, t_the_philo *philo)
 {
 	long long int time;
 	time = real_time(philo->starting_time);
-	if (!ft_who_is_died(time, philo) && !*philo->die)
+	ft_who_is_died(time, philo); 
+	if (!*philo->die)
 	{
 		pthread_mutex_lock(philo->stop);
 		printf("%lld %d is sleeping\n", time, id);
@@ -40,7 +43,8 @@ void	ft_eat(int id, t_the_philo *philo)
 {
 	long long int time;
 	time = real_time(philo->starting_time);
-	if (!ft_who_is_died(time, philo) && !*philo->die)
+	ft_who_is_died(time, philo);
+	if (!*philo->die)
 	{
 		pthread_mutex_lock(philo->stop);
 		time = real_time(philo->starting_time);
@@ -57,7 +61,8 @@ void	ft_thinking(int id, t_the_philo *info)
 {
 	long long int time;
 	time = real_time(info->starting_time);
-	if (!ft_who_is_died(time, info) && !*info->die)
+	ft_who_is_died(time, info);
+	if (!*info->die)
 	{
 		pthread_mutex_lock(info->stop);
 		printf("%lld %d is thinking\n", time,id);
@@ -70,7 +75,8 @@ void	ft_teken_the_fork(int id, pthread_mutex_t *mutex, t_the_philo *info)
 	long long int time;
 	pthread_mutex_lock(mutex);
 	time = real_time(info->starting_time);
-	if (!ft_who_is_died(time, info) && !*info->die)
+	ft_who_is_died(time, info);
+	if (!*info->die)
 	{
 		pthread_mutex_lock(info->stop);
 		printf("%lld %d has taken a fork\n", time,id);
