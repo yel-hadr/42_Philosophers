@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   creating_the_fork.c                                :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 02:26:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/12 05:10:42 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/04/12 04:50:09 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/04/12 04:50:50 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Philosophers.h"
-
-t_philosophrs	ft_init_the_fork(t_philosophrs philosophrs)
-{
-	int i;
-
-	i = philosophrs.number_of_philosophers;
-	philosophrs.mutex = ft_calloc(sizeof(pthread_mutex_t), i);
-	philosophrs.stop = ft_calloc(sizeof(pthread_mutex_t), i);
-	if (!philosophrs.mutex || !philosophrs.stop)
-		exit(1);
-	while (i--)
-	{
-		pthread_mutex_init(&philosophrs.mutex[i], NULL);
-		pthread_mutex_init(&philosophrs.stop[i], NULL);
-	}
-	return (philosophrs);
-}

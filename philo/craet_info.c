@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 02:35:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/10 05:13:36 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/12 05:15:48 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ t_philosophrs	ft_philo_info(t_philosophrs philo)
 	philo.philo = ft_calloc(sizeof(pthread_t), i);
 	philo.die = ft_calloc(sizeof(int), i);
 	philo.info = ft_calloc(sizeof(t_the_philo), i);
+	if (!philo.die || !philo.philo || !philo.info)
+		exit (1);
 	while (i--)
 	{
 		philo.info[i] = do_the_philo(philo, i);
