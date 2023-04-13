@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:09 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/13 01:45:51 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/13 02:45:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int main(int ac, char **av)
 	*gen = ft_philo_info(*gen);
 	*gen = start_thread(*gen);
 	ft_check_death(*gen);
+	ft_exit(*gen, 0);
 	free (gen);
 	return (0);
 }
