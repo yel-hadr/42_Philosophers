@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 02:35:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/12 05:15:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:34:34 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,9 @@ t_the_philo do_the_philo(t_philosophrs philosoohrs, int i)
 	the_philo.number_of_to_eat = philosoohrs.number_of_to_eat;
 	the_philo.r_fork.mutex = &philosoohrs.mutex[i];
 	if (!i)
-	{
 		the_philo.l_fork.mutex = &philosoohrs.mutex[philosoohrs.number_of_philosophers - 1];
-	}
 	else
-	{
 		the_philo.l_fork.mutex = &philosoohrs.mutex[i - 1];
-	}
 	return (the_philo);
 }
 
@@ -43,10 +39,8 @@ t_philosophrs	ft_philo_info(t_philosophrs philo)
 	philo.die = ft_calloc(sizeof(int), i);
 	philo.info = ft_calloc(sizeof(t_the_philo), i);
 	if (!philo.die || !philo.philo || !philo.info)
-		exit (1);
+		ft_exit(philo);
 	while (i--)
-	{
 		philo.info[i] = do_the_philo(philo, i);
-	}
 	return philo;
 }

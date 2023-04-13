@@ -6,8 +6,23 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 04:50:09 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/12 04:50:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:40:21 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Philosophers.h"
+
+t_philosophrs	ft_exit(t_philosophrs philo)
+{
+	if (philo.mutex)
+		free(philo.mutex);
+	if (philo.stop)
+		free(philo.stop);
+	if (philo.philo)
+		free (philo.philo);
+	if (philo.die)
+		free (philo.die);
+	if (philo.info)
+		free(philo.info);
+	exit(1);
+}

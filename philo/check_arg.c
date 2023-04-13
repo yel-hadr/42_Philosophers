@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 05:01:42 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/12 05:19:14 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:45:03 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	memset(ptr, '\n',count * size);
+	memset(ptr, '\0',count * size);
 	return (ptr);
 }
 
@@ -68,6 +68,8 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 
 	i = ac;
 	ptr = ft_calloc(sizeof(int), ac - 1);
+	if (!ptr)
+		exit(1);
 	while (ac-- > 1)
 	{
 		if (!check_is_valid(av[ac]))
@@ -78,9 +80,9 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 		ptr[ac - 1] = ft_atoi(av[ac]);
 	}
 	gen->number_of_philosophers = ptr[0];
-	if (gen->number_of_philosophers == 1)
+	if (gen->number_of_philosophers < 1)
 	{
-		printf ("you need more then one philosophers !!");
+		printf ("you need more then one philosopher o start the programme !!");
 		exit (1);
 	}
 	gen->time_to_die = ptr[1];
@@ -88,4 +90,5 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 	gen->time_to_sleep = ptr[3];
 	if (i == 6)
 		gen->number_of_to_eat = ptr[4];
+	free(ptr);
 }
