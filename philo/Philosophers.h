@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/13 02:38:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/14 05:12:39 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_philosophrs	ft_philo_info(t_philosophrs philo);
 t_philosophrs	start_thread(t_philosophrs philo);
 long long int	ft_get_time(void);
 long long int	real_time(long long int starting);
-void			ft_sleep(long long int time, long long int starting);
+void			ft_sleep(long long int time);
 void			ft_teken_the_fork(int id, pthread_mutex_t *mutex, t_the_philo *info);
 void			ft_thinking(int id, t_the_philo *info);
 void			ft_eat(int id, t_the_philo *philo);

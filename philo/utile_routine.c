@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 04:44:51 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/12 02:19:27 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:50:22 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int	ft_who_is_died(long long int time, t_the_philo *info)
 {
 	if (time - info->last_meal > info->time_to_die)
 	{
-		pthread_mutex_lock(info->stop);
 		info->last_meal = time;
 		*info->die = 1;
-		pthread_mutex_unlock(info->stop);
 		return 1; 
 	}
 	return 0;
@@ -27,31 +25,26 @@ int	ft_who_is_died(long long int time, t_the_philo *info)
 
 void	ft_sleeping(int id, t_the_philo *philo)
 {
-	long long int time;
-	time = real_time(philo->starting_time);
-	ft_who_is_died(time, philo); 
+	ft_who_is_died(real_time(philo->starting_time), philo); 
 	if (!*philo->die)
 	{
 		pthread_mutex_lock(philo->stop);
-		printf("%lld %d is sleeping\n", time, id);
+		printf("%lld %d is sleeping\n", real_time(philo->starting_time), id);
 		pthread_mutex_unlock(philo->stop);
-		ft_sleep(philo->time_to_sleep, philo->starting_time);
+		ft_sleep(philo->time_to_sleep);
 	}
 }
 
 void	ft_eat(int id, t_the_philo *philo)
 {
-	long long int time;
-	time = real_time(philo->starting_time);
-	ft_who_is_died(time, philo);
+	ft_who_is_died(real_time(philo->starting_time), philo);
 	if (!*philo->die)
 	{
 		pthread_mutex_lock(philo->stop);
-		time = real_time(philo->starting_time);
-		philo->last_meal = time;
-		printf("%lld %d is eating\n", time ,id);
+		philo->last_meal = real_time(philo->starting_time);
+		printf("%lld %d is eating\n", philo->last_meal, id);
 		pthread_mutex_unlock(philo->stop);
-		ft_sleep(philo->time_to_eat , philo->starting_time);
+		ft_sleep(philo->time_to_eat);
 		pthread_mutex_unlock(philo->r_fork.mutex);
 		pthread_mutex_unlock(philo->l_fork.mutex);
 	}
@@ -59,27 +52,23 @@ void	ft_eat(int id, t_the_philo *philo)
 
 void	ft_thinking(int id, t_the_philo *info)
 {
-	long long int time;
-	time = real_time(info->starting_time);
-	ft_who_is_died(time, info);
+	ft_who_is_died(real_time(info->starting_time), info);
 	if (!*info->die)
 	{
 		pthread_mutex_lock(info->stop);
-		printf("%lld %d is thinking\n", time,id);
+		printf("%lld %d is thinking\n", real_time(info->starting_time),id);
 		pthread_mutex_unlock(info->stop);
 	}
 }
 
 void	ft_teken_the_fork(int id, pthread_mutex_t *mutex, t_the_philo *info)
 {
-	long long int time;
 	pthread_mutex_lock(mutex);
-	time = real_time(info->starting_time);
-	ft_who_is_died(time, info);
+	ft_who_is_died(real_time(info->starting_time), info);
 	if (!*info->die)
 	{
 		pthread_mutex_lock(info->stop);
-		printf("%lld %d has taken a fork\n", time,id);
+		printf("%lld %d has taken a fork\n", real_time(info->starting_time),id);
 		pthread_mutex_unlock(info->stop);
 	}
 }
