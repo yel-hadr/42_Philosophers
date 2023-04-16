@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/14 05:18:17 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/16 01:57:20 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,9 @@ void	*ft_routine(void *arg)
 	info = (t_the_philo *)arg;
 	if (info->id % 2 == 1)
 	{
-		info->starting_time = ft_get_time();
 		ft_thinking(info->id, info);
-		usleep(200);
+		usleep(100);
 	}
-	else
-		info->starting_time = ft_get_time();
 	while (i != info->number_of_to_eat)
 	{
 		if (info->id % 2 == 1)

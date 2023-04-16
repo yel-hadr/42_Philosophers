@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/14 05:12:39 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/16 02:09:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void			ft_eat(int id, t_the_philo *philo);
 void			ft_sleeping(int id, t_the_philo *philo);
 void			*ft_routine(void *arg);
 t_philosophrs	ft_exit(t_philosophrs philo, int i);
+int		ft_who_is_died(t_the_philo *info);
 
 #endif

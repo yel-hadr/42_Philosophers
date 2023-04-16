@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:09 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/14 22:42:02 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/16 02:34:28 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_is_die(int *death, t_philosophrs philo)
 	die = 2;
 	while(i--)
 	{
-		if (death[i] == 1)
-			return (i);
+		if (ft_who_is_died(&philo.info[i]) == 1)
+			return (i + 1);
 		else if (death[i] != 2)
 			die = 0;
 	}
@@ -39,6 +39,7 @@ t_philosophrs ft_check_death(t_philosophrs philo)
 		i = ft_is_die(philo.die, philo);
 		if (i)
 		{
+			i--;
 			int j = philo.number_of_philosophers;
 			while (j--)
 			{
@@ -51,7 +52,7 @@ t_philosophrs ft_check_death(t_philosophrs philo)
 				printf("%lld %d died\n",philo.info[i].last_meal, philo.info[i].id);
 			break;
 		}
-		ft_sleep(1);
+		usleep(1000);
 	}
 	return (philo);
 }

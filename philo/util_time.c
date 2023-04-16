@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 01:57:46 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/14 22:41:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/16 02:35:44 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_sleep(long long int time)
 	time += ft_get_time();
 	while (sleep < time)
 	{
-		usleep(200);
+		usleep(500);
 		sleep =ft_get_time();
 	}
 }

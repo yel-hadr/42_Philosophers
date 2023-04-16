@@ -8,7 +8,7 @@ OBJ = $(SRC:.c=.o)
 all		: util $(NAME)
 
 $(NAME) : $(OBJ) $(M_OBJ)
-	$(CC) $(CFLAGS) -pthread $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) -pthread -O3 $(OBJ) -o $(NAME)
 
 util	:
 	
