@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 04:44:51 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/16 02:23:30 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/18 02:39:42 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	ft_thinking(int id, t_the_philo *info)
 
 void	ft_teken_the_fork(int id, pthread_mutex_t *mutex, t_the_philo *info)
 {
-	pthread_mutex_lock(mutex);
+	if (mutex)
+		pthread_mutex_lock(mutex);
 	if (!*info->die)
 	{
 		pthread_mutex_lock(info->stop);

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/16 01:57:20 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/18 02:45:06 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_routine(void *arg)
 	int i = 0;
 
 	info = (t_the_philo *)arg;
+	info->last_meal = real_time(info->starting_time);
 	if (info->id % 2 == 1)
 	{
 		ft_thinking(info->id, info);
@@ -50,6 +51,10 @@ t_philosophrs	start_thread(t_philosophrs philo)
 	
 	i = philo.number_of_philosophers;
 	while(i--)
-		pthread_create(&philo.philo[i], NULL, &ft_routine, &philo.info[i]);
+		if (pthread_create(&philo.philo[i], NULL, &ft_routine, &philo.info[i]))
+		{
+			printf("Failed to create thread !!!");
+			exit(1);
+		}
 	return (philo);
 }

@@ -7,10 +7,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Wed Apr 12 01:42:16 2023
+# Make data base, printed on Tue Apr 18 22:27:09 2023
 
 # Variables
 
@@ -35,17 +33,19 @@ _ = /usr/bin/make
 # makefile
 MAKEFILE_LIST := 
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/yel-hadr
 # environment
-PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+PATH = /Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
-LaunchInstanceID = 5F3F7AB9-6BA2-4AD9-A4EE-58213EF54A4B
+LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.r4UUBKzaNd/Listeners
+LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7TTX5rsdJW/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -65,27 +65,39 @@ LOGNAME = yel-hadr
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
+ZSH = /Users/yel-hadr/.oh-my-zsh
+# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
 # environment
-SHLVL = 1
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 2
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = yel-hadr
 # makefile
 .DEFAULT_GOAL := 
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:F2ACC2D9-280C-40B1-A6BE-D49EBF912600
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -103,23 +115,31 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
+TERM_PROGRAM_VERSION = 3.4.13
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.4320.DCA55063-536C-4DBF-941C-F71520821F6E
+# environment
+LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
+ITERM_SESSION_ID = w0t0p0:F2ACC2D9-280C-40B1-A6BE-D49EBF912600
 # environment
-COMMAND_MODE = unix2003
+COLORFGBG = 15;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
-LC_ALL = C
+ITERM_PROFILE = Default
 # environment
-SECURITYSESSIONID = 186a7
+PAGER = less
+# environment
+LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
@@ -129,11 +149,15 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # environment
+CLICOLOR = 1
+# environment
 LANG = C
 # environment
-VSCODE_PID = 3029
+TERM = xterm-256color
+# environment
+VSCODE_PID = 12054
 # variable set hash-table stats:
-# Load=59/1024=6%, Rehash=0, Collisions=1/80=1%
+# Load=72/1024=7%, Rehash=0, Collisions=4/93=4%
 
 # Pattern-specific Variable Values
 
@@ -215,6 +239,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed Apr 12 01:42:16 2023
+# Finished Make data base on Tue Apr 18 22:27:09 2023
 
  
+make: *** No rule to make target `all'.  Stop.
+

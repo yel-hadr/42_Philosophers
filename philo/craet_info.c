@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 02:35:06 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/16 01:57:36 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/18 02:44:11 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_the_philo do_the_philo(t_philosophrs philosoohrs, int i)
 	the_philo.number_of_to_eat = philosoohrs.number_of_to_eat;
 	the_philo.r_fork.mutex = &philosoohrs.mutex[i];
 	if (!i)
-		the_philo.l_fork.mutex = &philosoohrs.mutex[philosoohrs.number_of_philosophers - 1];
+		the_philo.l_fork.mutex = &philosoohrs.mutex[philosoohrs.number_of_philosophers - 1];	
 	else
 		the_philo.l_fork.mutex = &philosoohrs.mutex[i - 1];
 	the_philo.starting_time = ft_get_time();
