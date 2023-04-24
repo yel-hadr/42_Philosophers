@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   routine_starting.c                                 :+:      :+:    :+:   */
+/*   start_the_philo.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/22 01:01:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/24 20:25:51 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,16 @@ void	*ft_routine(void *arg)
 	return (NULL);
 }
 
-t_philosophrs	start_thread(t_philosophrs philo)
+t_philosophrs	*start_thread(t_philosophrs *philo)
 {
 	int i;
-	
-	i = philo.number_of_philosophers;
+	if (!philo)
+		return (NULL);
+	i = philo->number_of_philosophers;
 	while(i--)
-		if (pthread_create(&philo.philo[i], NULL, &ft_routine, &philo.info[i]))
+		if (pthread_create(&philo->philo[i], NULL, &ft_routine, &philo->info[i]))
 		{
 			printf("Failed to create thread !!!");
-			exit(1);
 		}
 	return (philo);
 }

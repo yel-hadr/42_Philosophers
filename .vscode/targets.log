@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Mon Apr 24 11:02:17 2023
+# Make data base, printed on Mon Apr 24 20:10:23 2023
 
 # Variables
 
@@ -39,7 +39,7 @@ PATH = /Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sb
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 65399868-A317-4D77-A6FB-9C8BC0C85B59
+LaunchInstanceID = C0AA3B55-AF4C-489A-B57F-E1FBF92A7BCE
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -47,7 +47,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.SX3yLxwFWR/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AfNXWoep7c/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -91,7 +91,7 @@ USER = yel-hadr
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:1AC4F255-7118-4A4E-87BE-7475C134B0CF
+TERM_SESSION_ID = w0t0p0:F2C527D6-F46C-41F1-AC9A-2BCCF1F43C0D
 # environment
 LESS = -R
 # automatic
@@ -119,7 +119,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.13
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.AC224C8D-3EB2-4B2E-B864-A0690A3CA04D
+XPC_SERVICE_NAME = com.microsoft.VSCode.4320.72DE2995-E9D9-4B8D-9D6E-7709E7714EB1
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -127,7 +127,7 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:1AC4F255-7118-4A4E-87BE-7475C134B0CF
+ITERM_SESSION_ID = w0t0p0:F2C527D6-F46C-41F1-AC9A-2BCCF1F43C0D
 # environment
 COLORFGBG = 15;0
 # environment
@@ -161,7 +161,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 46533
+VSCODE_PID = 21009
 # variable set hash-table stats:
 # Load=75/1024=7%, Rehash=0, Collisions=4/96=4%
 
@@ -171,9 +171,9 @@ VSCODE_PID = 46533
 
 # Directories
 
-# . (device 16777225, inode 4660661): 8 files, no impossibilities.
+# . (device 16777225, inode 4660661): 7 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -245,7 +245,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon Apr 24 11:02:17 2023
+# Finished Make data base on Mon Apr 24 20:10:23 2023
 
  
 make: *** No rule to make target `all'.  Stop.

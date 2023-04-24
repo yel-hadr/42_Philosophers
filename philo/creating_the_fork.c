@@ -6,25 +6,25 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 02:26:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/13 02:38:28 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/24 20:26:50 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Philosophers.h"
 
-t_philosophrs	ft_init_the_fork(t_philosophrs philosophrs)
+t_philosophrs	*ft_init_the_fork(t_philosophrs *philosophrs)
 {
 	int i;
 
-	i = philosophrs.number_of_philosophers;
-	philosophrs.mutex = ft_calloc(sizeof(pthread_mutex_t), i);
-	philosophrs.stop = ft_calloc(sizeof(pthread_mutex_t), i);
-	if (!philosophrs.mutex || !philosophrs.stop)
-		ft_exit(philosophrs, 1);
+	i = philosophrs->number_of_philosophers;
+	philosophrs->mutex = ft_calloc(sizeof(pthread_mutex_t), i);
+	philosophrs->stop = ft_calloc(sizeof(pthread_mutex_t), i);
+	if (!philosophrs->mutex || !philosophrs->stop)
+		ft_exit(philosophrs);
 	while (i--)
 	{
-		pthread_mutex_init(&philosophrs.mutex[i], NULL);
-		pthread_mutex_init(&philosophrs.stop[i], NULL);
+		pthread_mutex_init(&philosophrs->mutex[i], NULL);
+		pthread_mutex_init(&philosophrs->stop[i], NULL);
 	}
 	return (philosophrs);
 }

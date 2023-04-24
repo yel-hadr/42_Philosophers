@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 05:01:42 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/16 02:13:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/24 20:33:39 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	check_is_valid(char *str)
 	return (1);
 }
 
-void	check_arg(int ac , char **av, t_philosophrs *gen)
+int	check_arg(int ac , char **av, t_philosophrs *gen)
 {
 	int *ptr;
 	int i;
@@ -69,13 +69,13 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 	i = ac;
 	ptr = ft_calloc(sizeof(int), ac - 1);
 	if (!ptr)
-		exit(1);
+		return 1;
 	while (ac-- > 1)
 	{
 		if (!check_is_valid(av[ac]))
 		{
 			printf("Oh, Errer wrong input !!\n");
-			exit(1);
+			return 1;
 		}
 		ptr[ac - 1] = ft_atoi(av[ac]);
 	}
@@ -83,7 +83,7 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 	if (gen->number_of_philosophers < 1)
 	{
 		printf ("you need more then one philosopher o start the programme !!");
-		exit (1);
+		return 1;
 	}
 	gen->time_to_die = ptr[1];
 	gen->time_to_eat = ptr[2];
@@ -91,4 +91,5 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 	if (i == 6)
 		gen->number_of_to_eat = ptr[4];
 	free(ptr);
+	return (0);
 }

@@ -6,20 +6,22 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 22:41:18 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 10:49:24 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:38:44 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-t_the_philo	ft_get_info(t_philosophrs philosoohrs)
+t_the_philo	ft_get_info(t_philosophrs philosoohrs, int id)
 {
 	t_the_philo the_philo;
 
-	the_philo.pid  = getpid();
+	
+	the_philo.pid  = id;
 	the_philo.starting_time = philosoohrs.starting_time;
 	the_philo.time_to_die = philosoohrs.time_to_die;
 	the_philo.time_to_eat = philosoohrs.time_to_eat;
+	the_philo.number_of_philosophers = philosoohrs.number_of_philosophers;
 	the_philo.time_to_sleep = philosoohrs.time_to_sleep;
 	the_philo.number_of_to_eat = philosoohrs.number_of_to_eat;
 	the_philo.forks = sem_open("/fork", 0);
@@ -41,7 +43,7 @@ int 	ft_creat_the_philo(t_philosophrs *philo, t_the_philo *the_philo)
 		sem_unlink("/death");
 		philo->pid = ft_calloc(sizeof(int), philo->number_of_philosophers);
 		philo->forks = sem_open ("/fork", O_CREAT ,  0644, philo->number_of_philosophers);
-		philo->death = sem_open ("/death", O_CREAT ,  0644, philo->number_of_philosophers);
+		philo->death = sem_open ("/death", O_CREAT ,  0644, 3);
 		if (philo->forks == SEM_FAILED || philo->death == SEM_FAILED || !philo->pid)
 			exit(1);
 		philo->pid[i] = pid;
@@ -56,7 +58,7 @@ int 	ft_creat_the_philo(t_philosophrs *philo, t_the_philo *the_philo)
 	}
 	if (!pid)
 	{
-		*the_philo = ft_get_info(*philo);
+		*the_philo = ft_get_info(*philo, i);
 	}
 	return (pid);
 }

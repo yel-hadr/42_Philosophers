@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/16 02:09:04 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/24 20:32:54 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,14 @@ typedef struct s_philosophrs
 	int time_to_sleep;
 	int number_of_to_eat;
 	t_the_philo *info;
+	long long int	starting_time;
 }	t_philosophrs;
 
 void			*ft_calloc(size_t count, size_t size);
-void			check_arg(int ac , char **av, t_philosophrs *gen);
-t_philosophrs	ft_init_the_fork(t_philosophrs philosophrs);
-t_philosophrs	ft_philo_info(t_philosophrs philo);
-t_philosophrs	start_thread(t_philosophrs philo);
+int			check_arg(int ac , char **av, t_philosophrs *gen);
+t_philosophrs	*ft_init_the_fork(t_philosophrs *philosophrs);
+t_philosophrs	*ft_philo_info(t_philosophrs *philo);
+t_philosophrs	*start_thread(t_philosophrs *philo);
 long long int	ft_get_time(void);
 long long int	real_time(long long int starting);
 void			ft_sleep(long long int time);
@@ -69,7 +70,7 @@ void			ft_thinking(int id, t_the_philo *info);
 void			ft_eat(int id, t_the_philo *philo);
 void			ft_sleeping(int id, t_the_philo *philo);
 void			*ft_routine(void *arg);
-t_philosophrs	ft_exit(t_philosophrs philo, int i);
-int		ft_who_is_died(t_the_philo *info);
+t_philosophrs	*ft_exit(t_philosophrs *philo);
+int				ft_who_is_died(t_the_philo *info);
 
 #endif
