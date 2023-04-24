@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   check_arg_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 05:01:42 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/16 21:55:33 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/22 23:16:28 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,15 @@ void	check_arg(int ac , char **av, t_philosophrs *gen)
 	gen->number_of_philosophers = ptr[0];
 	if (gen->number_of_philosophers < 1)
 	{
-		printf ("you need more then one philosopher o start the programme !!");
+		printf ("you need one or more philosopher to start the programme !!");
 		exit (1);
 	}
 	gen->time_to_die = ptr[1];
 	gen->time_to_eat = ptr[2];
 	gen->time_to_sleep = ptr[3];
+	gen->number_of_to_eat = -1;
 	if (i == 6)
 		gen->number_of_to_eat = ptr[4];
+	
 	free(ptr);
 }

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   start_the_routine.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 23:00:58 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 10:14:18 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/04/24 10:59:26 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-int	main(int ac, char **av)
+int	ft_routine(t_the_philo *info)
 {
-	t_philosophrs *gen;
-	t_the_philo	the_philo;
-	int pid;
+	int i = 0;
+	int death = 0;
 	
-	if (ac != 5 && ac != 6)
+	info->last_meal = real_time(info->starting_time);
+	sem_wait(info->death);
+	while (i != info->number_of_to_eat && !death)
 	{
-		printf("Oh, Errer");
-		return (1);
+		ft_thinking(info, &death);
+		ft_teken_the_fork(info->forks, info, &death);
+		ft_eat(info, &death);
+		ft_sleeping(info, &death);
+		i++;
 	}
-	gen = ft_calloc(sizeof(t_philosophrs), 1);
-	if (!gen)
-		return (1);
-	check_arg(ac, av, gen);
-	pid = ft_creat_the_philo(gen, &the_philo);
-	if(!pid)
-		pid = ft_routine(&the_philo);
-	else
-		pid = check_death(gen);
-	return (pid);
+	return (death);
 }

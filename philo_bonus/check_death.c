@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   check_death.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 23:00:58 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 10:14:18 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/04/23 22:22:45 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/04/24 10:56:01 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-int	main(int ac, char **av)
+int	check_death(t_philosophrs *philo)
 {
-	t_philosophrs *gen;
-	t_the_philo	the_philo;
+	int status;
 	int pid;
-	
-	if (ac != 5 && ac != 6)
+	int j;
+
+	(void) philo;
+	status = 0;
+	j = philo->number_of_philosophers;
+	while (j)
 	{
-		printf("Oh, Errer");
-		return (1);
+		pid = waitpid(-1, &status, 0);
+		if (status)
+		{
+			int i;
+			i = philo->number_of_philosophers;
+			while (i--)
+				kill (philo->pid[i], SIGINT);
+			printf ("%lld %d died\n", real_time(philo->starting_time), pid);
+			break;	
+		}
+		else if(!status)
+			j--;
 	}
-	gen = ft_calloc(sizeof(t_philosophrs), 1);
-	if (!gen)
-		return (1);
-	check_arg(ac, av, gen);
-	pid = ft_creat_the_philo(gen, &the_philo);
-	if(!pid)
-		pid = ft_routine(&the_philo);
-	else
-		pid = check_death(gen);
-	return (pid);
+	return (0);
 }

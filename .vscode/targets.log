@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Apr 18 22:27:09 2023
+# Make data base, printed on Mon Apr 24 11:02:17 2023
 
 # Variables
 
@@ -33,11 +33,13 @@ _ = /usr/bin/make
 # makefile
 MAKEFILE_LIST := 
 # environment
-VSCODE_CWD = /Users/yel-hadr
+VSCODE_CWD = /Users/yel-hadr/Desktop/42_Philosophers
 # environment
 PATH = /Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+LaunchInstanceID = 65399868-A317-4D77-A6FB-9C8BC0C85B59
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -45,7 +47,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7TTX5rsdJW/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.SX3yLxwFWR/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -89,7 +91,7 @@ USER = yel-hadr
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:F2ACC2D9-280C-40B1-A6BE-D49EBF912600
+TERM_SESSION_ID = w0t0p0:1AC4F255-7118-4A4E-87BE-7475C134B0CF
 # environment
 LESS = -R
 # automatic
@@ -117,7 +119,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.13
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.DCA55063-536C-4DBF-941C-F71520821F6E
+XPC_SERVICE_NAME = com.microsoft.VSCode.4320.AC224C8D-3EB2-4B2E-B864-A0690A3CA04D
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -125,11 +127,13 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:F2ACC2D9-280C-40B1-A6BE-D49EBF912600
+ITERM_SESSION_ID = w0t0p0:1AC4F255-7118-4A4E-87BE-7475C134B0CF
 # environment
 COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -140,6 +144,8 @@ ITERM_PROFILE = Default
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a7
 # automatic
 ^F = $(notdir $^)
 # default
@@ -155,9 +161,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 12054
+VSCODE_PID = 46533
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=4/93=4%
+# Load=75/1024=7%, Rehash=0, Collisions=4/96=4%
 
 # Pattern-specific Variable Values
 
@@ -165,9 +171,9 @@ VSCODE_PID = 12054
 
 # Directories
 
-# . (device 16777225, inode 4660661): 7 files, no impossibilities.
+# . (device 16777225, inode 4660661): 8 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -239,7 +245,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue Apr 18 22:27:09 2023
+# Finished Make data base on Mon Apr 24 11:02:17 2023
 
  
 make: *** No rule to make target `all'.  Stop.

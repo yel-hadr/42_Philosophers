@@ -1,6 +1,6 @@
 {
 	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
-		"philosophers.h": "c"
+		"philo_bonus.h": "c"
 	}
 }
