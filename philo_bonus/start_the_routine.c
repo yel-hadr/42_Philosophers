@@ -6,25 +6,41 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 11:26:49 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:12:53 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
+void	*ft_checker_routine(void* arg)
+{
+	t_the_philo *info;
+
+	info = (t_the_philo*)arg;
+	while (1)
+	{
+		if (ft_who_is_died(info))
+			exit(1);
+		usleep (200);
+	}
+	return (NULL);
+}
+
 int	ft_routine(t_the_philo *info)
 {
 	int i = 0;
-	int death = 0;
+	pthread_t checker;
 	
 	info->last_meal = real_time(info->starting_time);
-	while (i != info->number_of_to_eat && !death)
+	pthread_create(&checker,NULL, ft_checker_routine, info);
+	while (i != info->number_of_to_eat)
 	{
-		ft_thinking(info, &death);
-		ft_teken_the_fork(info->forks, info, &death);
-		ft_eat(info, &death);
-		ft_sleeping(info, &death);
+		ft_thinking(info);
+		ft_teken_the_fork(info->forks, info);
+		ft_eat(info);
+		ft_sleeping(info);
 		i++;
 	}
-	return (death);
+	exit(0);
+	return (0);
 }

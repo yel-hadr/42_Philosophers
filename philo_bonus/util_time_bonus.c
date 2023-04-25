@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 01:57:46 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/22 23:54:23 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:50:28 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ long long int	real_time(long long int starting)
 	return (ft_get_time() - starting);
 }
 
-void	ft_sleep(long long int time)
+int	ft_sleep(long long int time)
 {
 	long long int sleep = 0;
 	time += ft_get_time();
@@ -33,4 +33,5 @@ void	ft_sleep(long long int time)
 		usleep(200);
 		sleep =ft_get_time();
 	}
+	return (0);
 }

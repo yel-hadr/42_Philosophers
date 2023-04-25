@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 20:32:54 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:45:19 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ typedef struct s_philosophrs
 }	t_philosophrs;
 
 void			*ft_calloc(size_t count, size_t size);
-int			check_arg(int ac , char **av, t_philosophrs *gen);
+int				ft_atoi(const char *str);
+int				check_is_valid(char *str);
+int				check_arg(int ac , char **av, t_philosophrs *gen);
 t_philosophrs	*ft_init_the_fork(t_philosophrs *philosophrs);
 t_philosophrs	*ft_philo_info(t_philosophrs *philo);
 t_philosophrs	*start_thread(t_philosophrs *philo);

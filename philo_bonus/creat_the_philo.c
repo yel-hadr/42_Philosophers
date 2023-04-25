@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 22:41:18 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 19:38:44 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:17:47 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_the_philo	ft_get_info(t_philosophrs philosoohrs, int id)
 	t_the_philo the_philo;
 
 	
-	the_philo.pid  = id;
+	the_philo.pid  = id + 1;
 	the_philo.starting_time = philosoohrs.starting_time;
 	the_philo.time_to_die = philosoohrs.time_to_die;
 	the_philo.time_to_eat = philosoohrs.time_to_eat;

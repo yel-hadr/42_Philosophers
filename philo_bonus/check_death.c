@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:22:45 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 19:37:45 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:18:06 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	check_death(t_philosophrs *philo)
 	while (j)
 	{
 		pid = waitpid(-1, &status, 0);
-		if (status)
+		if (status && pid > 0)
 		{
 			pid = ft_killer(philo, pid);
-			printf ("%lld %d died\n", real_time(philo->starting_time), pid);
+			printf ("%lld %d died\n", real_time(philo->starting_time), pid + 1);
 			break;	
 		}
-		else if(!status)
+		else if(!status && pid > 0)
 			j--;
 	}
 	return (0);
