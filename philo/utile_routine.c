@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 04:44:51 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/18 02:39:42 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:31:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ int	ft_who_is_died(t_the_philo *info)
 {
 	long long int time;
 
+	if(*info->die == 2)
+		return (0);
 	time = real_time(info->starting_time);
 	if (time - info->last_meal > info->time_to_die)
 	{
-		info->last_meal = time;
 		*info->die = 1;
 		return 1; 
 	}

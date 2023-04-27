@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:43:22 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/25 16:46:19 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:12:01 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int chech_the_nbr(char *str)
 	int len;
 	
 	len = 0;
-	while (*(str++) == '0');
+	while (*str == '0')
+		str++;
 	while (*(str++))
 		len++;
 	return (len);
