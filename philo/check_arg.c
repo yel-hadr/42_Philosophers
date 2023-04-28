@@ -6,13 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 05:01:42 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/27 19:13:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:10:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Philosophers.h"
+#include "philo.h"
 
-int do_gen(t_philosophrs *gen, int size, int *ptr)
+int	do_gen(t_philosophrs *gen, int size, int *ptr)
 {
 	gen->number_of_philosophers = ptr[0];
 	if (!gen->number_of_philosophers)

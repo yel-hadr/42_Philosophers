@@ -6,16 +6,16 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:09 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/27 19:42:14 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:11:23 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Philosophers.h"
+#include "philo.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_philosophrs *gen;
-	
+	t_philosophrs	*gen;
+
 	if (ac != 5 && ac != 6)
 	{
 		printf("Oh, Errer");
@@ -25,7 +25,7 @@ int main(int ac, char **av)
 	if (!gen)
 		return (1);
 	gen->number_of_to_eat = -1;
-	if (check_arg(ac , av, gen))
+	if (check_arg(ac, av, gen))
 	{
 		free (gen);
 		return (1);

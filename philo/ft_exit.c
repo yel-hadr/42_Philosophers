@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 04:50:09 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/24 20:21:41 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:11:13 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Philosophers.h"
+#include "philo.h"
 
 t_philosophrs	*ft_exit(t_philosophrs *philo)
 {

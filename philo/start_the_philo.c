@@ -6,17 +6,32 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/27 19:24:13 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:23:27 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Philosophers.h"
+#include "philo.h"
+
+static void	do_teking_the_forks(t_the_philo	*info)
+{
+	if (info->id % 2 == 1)
+	{
+		ft_teken_the_fork(info->id, info->r_fork.mutex, info);
+		ft_teken_the_fork(info->id, info->l_fork.mutex, info);
+	}
+	else
+	{
+		ft_teken_the_fork(info->id, info->l_fork.mutex, info);
+		ft_teken_the_fork(info->id, info->r_fork.mutex, info);
+	}
+}
 
 void	*ft_routine(void *arg)
 {
 	t_the_philo	*info;
-	int i = 0;
+	int			i;
 
+	i = 0;
 	info = (t_the_philo *)arg;
 	info->last_meal = real_time(info->starting_time);
 	if (info->id % 2 == 1)
@@ -26,15 +41,7 @@ void	*ft_routine(void *arg)
 	}
 	while (i != info->number_of_to_eat)
 	{
-		if (info->id % 2 == 1)
-		{
-			ft_teken_the_fork(info->id, info->r_fork.mutex, info);
-			ft_teken_the_fork(info->id, info->l_fork.mutex, info);
-		}
-		else{
-			ft_teken_the_fork(info->id, info->l_fork.mutex, info);
-			ft_teken_the_fork(info->id, info->r_fork.mutex, info);
-		}
+		do_teking_the_forks(info);
 		ft_eat(info->id, info);
 		ft_sleeping(info->id, info);
 		ft_thinking(info->id, info);
@@ -47,14 +54,12 @@ void	*ft_routine(void *arg)
 
 t_philosophrs	*start_thread(t_philosophrs *philo)
 {
-	int i;
+	int	i;
+
 	if (!philo)
 		return (NULL);
 	i = philo->number_of_philosophers;
-	while(i--)
-		if (pthread_create(&philo->philo[i], NULL, &ft_routine, &philo->info[i]))
-		{
-			printf("Failed to create thread !!!");
-		}
+	while (i--)
+		pthread_create(&philo->philo[i], NULL, &ft_routine, &philo->info[i]);
 	return (philo);
 }

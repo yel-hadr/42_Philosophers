@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:43:22 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/27 15:12:01 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:11:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Philosophers.h"
+#include "philo.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	memset(ptr, '\0',count * size);
+	memset (ptr, '\0', count * size);
 	return (ptr);
 }
 
@@ -51,10 +51,10 @@ int	ft_atoi(const char *str)
 	return (r * s);
 }
 
-int chech_the_nbr(char *str)
+int	chech_the_nbr(char *str)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	while (*str == '0')
 		str++;
