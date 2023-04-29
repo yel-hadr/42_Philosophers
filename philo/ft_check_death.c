@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 21:50:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/28 17:11:11 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:20:45 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,10 @@ t_philosophrs	ft_check_death(t_philosophrs philo)
 			i--;
 			ft_kill_all(philo);
 			if (*philo.info[i].die == 1)
-				printf("%lld %d died\n", philo.info[i].last_meal, \
+				printf("%lld %d died\n", real_time(philo.info[i].starting_time), \
 				philo.info[i].id);
 			break ;
 		}
-		usleep (300);
 	}
 	return (philo);
 }

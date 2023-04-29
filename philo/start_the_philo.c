@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/28 17:23:27 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/29 22:57:02 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ static void	do_teking_the_forks(t_the_philo	*info)
 void	*ft_routine(void *arg)
 {
 	t_the_philo	*info;
-	int			i;
 
-	i = 0;
 	info = (t_the_philo *)arg;
 	info->last_meal = real_time(info->starting_time);
 	if (info->id % 2 == 1)
@@ -39,16 +37,16 @@ void	*ft_routine(void *arg)
 		ft_thinking(info->id, info);
 		usleep(100);
 	}
-	while (i != info->number_of_to_eat)
+	while (1)
 	{
+		if (*info->die)
+			break ;
 		do_teking_the_forks(info);
 		ft_eat(info->id, info);
+		info->number_of_to_eat--;
 		ft_sleeping(info->id, info);
 		ft_thinking(info->id, info);
-		i++;
 	}
-	if (!*info->die)
-		*info->die = 2;
 	return (NULL);
 }
 

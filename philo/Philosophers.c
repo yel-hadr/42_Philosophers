@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:09 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/28 17:11:23 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:15:23 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac != 5 && ac != 6)
 	{
-		printf("Oh, Errer");
+		printf("%sErrer 404 : Read the subject PLS%s\n", URED, NOC);
 		return (1);
 	}
 	gen = ft_calloc(sizeof(t_philosophrs), 1);

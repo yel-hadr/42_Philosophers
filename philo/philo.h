@@ -6,13 +6,16 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/28 17:16:20 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:12:10 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 
 # define PHILO_H
+
+# define URED "\e[4;31m"
+# define NOC "\e[0m"
 
 # include <unistd.h>
 # include <stdlib.h>

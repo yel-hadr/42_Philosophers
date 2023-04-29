@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 05:01:42 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/28 17:10:49 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:48:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	do_gen(t_philosophrs *gen, int size, int *ptr)
 	gen->number_of_philosophers = ptr[0];
 	if (!gen->number_of_philosophers)
 	{
-		printf ("you need more then one philosopher o start the programme !!");
+		printf ("%syou need one or more philosopher o \
+start the programe !!%s\n", URED, NOC);
 		return (1);
 	}
 	gen->time_to_die = ptr[1];
@@ -45,7 +46,7 @@ int	check_arg(int ac, char **av, t_philosophrs *gen)
 	{
 		if (!check_is_valid(av[ac]))
 		{
-			printf ("Oh, Errer wrong input !!\n");
+			printf ("%sOh, Errer wrong input !!%s\n", URED, NOC);
 			return (1);
 		}
 		ptr[ac - 1] = ft_atoi(av[ac]);
