@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 04:44:51 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/29 23:19:56 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 10:54:58 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ int	ft_who_is_died(t_the_philo *info)
 	time = real_time(info->starting_time);
 	pthread_mutex_lock(info->stop);
 	if (!info->number_of_to_eat)
-	{
 		*info->die = 2;
-	}
 	if (time - info->last_meal > info->time_to_die)
 	{
 		*info->die = 1;
@@ -35,6 +33,7 @@ int	ft_who_is_died(t_the_philo *info)
 void	ft_sleeping(int id, t_the_philo *philo)
 {
 	pthread_mutex_lock(philo->stop);
+	philo->number_of_to_eat--;
 	printf("%lld %d is sleeping\n", ft_get_time() - \
 			philo->starting_time, id);
 	pthread_mutex_unlock(philo->stop);
