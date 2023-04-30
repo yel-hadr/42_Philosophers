@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/30 10:57:17 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 11:06:41 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	*ft_routine(void *arg)
 		ft_sleeping(info->id, info);
 		ft_thinking(info->id, info);
 	}
-	pthread_mutex_unlock(info->stop);	
+	pthread_mutex_unlock(info->stop);
 	return (NULL);
 }
 
