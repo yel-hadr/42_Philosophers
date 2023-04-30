@@ -6,17 +6,17 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 02:25:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/25 10:12:53 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 20:14:21 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-void	*ft_checker_routine(void* arg)
+void	*ft_checker_routine(void *arg)
 {
-	t_the_philo *info;
+	t_the_philo	*info;
 
-	info = (t_the_philo*)arg;
+	info = (t_the_philo *)arg;
 	while (1)
 	{
 		if (ft_who_is_died(info))
@@ -28,11 +28,12 @@ void	*ft_checker_routine(void* arg)
 
 int	ft_routine(t_the_philo *info)
 {
-	int i = 0;
-	pthread_t checker;
-	
+	pthread_t	checker;
+	int			i;
+
+	i = 0;
 	info->last_meal = real_time(info->starting_time);
-	pthread_create(&checker,NULL, ft_checker_routine, info);
+	pthread_create(&checker, NULL, ft_checker_routine, info);
 	while (i != info->number_of_to_eat)
 	{
 		ft_thinking(info);

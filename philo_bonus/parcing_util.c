@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:24:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/25 16:28:03 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 20:05:29 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	memset(ptr, '\0',count * size);
+	memset(ptr, '\0', count * size);
 	return (ptr);
 }
 
@@ -30,11 +30,11 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-long long int ft_atoi(const char *str)
+long long int	ft_atoi(const char *str)
 {
-	int	s;
-	int	i;
 	long long int	r;
+	int				s;
+	int				i;
 
 	s = 1;
 	r = 0;
@@ -48,7 +48,11 @@ long long int ft_atoi(const char *str)
 	{
 		r = (r * 10) + (str[i++] - '0');
 		if (r < INT_MIN || r > INT_MAX)
+		{
+			printf ("%sError: Number too big! Please enter a smaller \
+value.%s\n", URED, NOC);
 			exit(1);
+		}
 	}
 	return (r * s);
 }

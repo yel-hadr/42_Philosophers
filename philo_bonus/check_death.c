@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 22:22:45 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/25 10:18:06 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:56:34 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_killer(t_philosophrs *philo, int pid)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
+
 	i = philo->number_of_philosophers;
 	while (i--)
 	{
@@ -28,9 +29,9 @@ int	ft_killer(t_philosophrs *philo, int pid)
 
 int	check_death(t_philosophrs *philo)
 {
-	int status;
-	int pid;
-	int j;
+	int	status;
+	int	pid;
+	int	j;
 
 	(void) philo;
 	status = 0;
@@ -42,9 +43,9 @@ int	check_death(t_philosophrs *philo)
 		{
 			pid = ft_killer(philo, pid);
 			printf ("%lld %d died\n", real_time(philo->starting_time), pid + 1);
-			break;	
+			break ;
 		}
-		else if(!status && pid > 0)
+		else if (!status && pid > 0)
 			j--;
 	}
 	return (0);
