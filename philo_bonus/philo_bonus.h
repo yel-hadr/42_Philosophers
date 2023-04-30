@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/30 20:11:19 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 21:40:28 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <stdio.h>
 # include <string.h>
 # include <sys/time.h>
-# include <fcntl.h>
-# include <sys/stat.h> 
 # include <semaphore.h>
 # include <pthread.h>
 # include <signal.h>

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:35:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/04/29 23:12:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/04/30 21:40:58 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # define URED "\e[4;31m"
 # define NOC "\e[0m"
 
+# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <pthread.h>
-# include <stdio.h>
 # include <string.h>
+# include <pthread.h>
 # include <sys/time.h>
 
 typedef struct s_fork
